@@ -3,10 +3,10 @@ use std::ops::Add;
 /// Color containing 4 bytes for red, green, blue, and alpha.
 #[derive(Copy, Clone, Debug)]
 pub struct Color {
-    pub(crate) r: u8,
-    pub(crate) g: u8,
-    pub(crate) b: u8,
-    pub(crate) a: u8,
+    pub r: u8,
+    pub g: u8,
+    pub b: u8,
+    pub a: u8,
 }
 
 impl Color {
