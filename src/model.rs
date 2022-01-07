@@ -10,7 +10,7 @@ use std::io::BufWriter;
 #[derive(Clone)]
 pub struct Model {
     pub size: (u16, u16, u16),
-    pub(crate) voxels: Vec<Voxel>,
+    pub voxels: Vec<Voxel>,
     pub position: Option<(i32, i32, i32)>,
     pub(crate) rotation: Option<u8>,
     pub layer: Option<i32>,
