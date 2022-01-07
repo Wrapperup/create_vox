@@ -12,7 +12,7 @@ pub struct Model {
     pub size: (u16, u16, u16),
     pub voxels: Vec<Voxel>,
     pub position: Option<(i32, i32, i32)>,
-    pub(crate) rotation: Option<u8>,
+    pub rotation: Option<u8>,
     pub layer: Option<i32>,
     pub name: Option<String>,
     pub(crate) id: i32,
@@ -76,7 +76,7 @@ impl Model {
             voxel_slice.push(self.voxels[i].position.0);
             voxel_slice.push(self.voxels[i].position.1);
             voxel_slice.push(self.voxels[i].position.2);
-            voxel_slice.push(self.voxels[i].colorindex);
+            voxel_slice.push(self.voxels[i].color_index);
         }
         buf_writer.write(voxel_slice.as_slice()).unwrap();
     }
@@ -321,7 +321,7 @@ impl Model {
     /// vox.models[0].add_voxel_at_pos(1,1,3,6).unwrap();
     /// vox.models[0].add_voxel_at_pos(1,1,4,7).unwrap();
     ///
-    /// vox.models[0].retain_voxels(|voxel| voxel.colorindex == 6);
+    /// vox.models[0].retain_voxels(|voxel| voxel.color_index == 6);
     ///
     /// assert_eq!(2, vox.models[0].num_of_voxels());
     /// ```
@@ -366,7 +366,7 @@ impl Model {
     /// vox.models[0].add_voxel_at_pos(1,1,3,6).unwrap();
     /// vox.models[0].add_voxel_at_pos(1,1,4,7).unwrap();
     ///
-    /// vox.models[0].retain_voxels(|voxel| voxel.colorindex == 6);
+    /// vox.models[0].retain_voxels(|voxel| voxel.color_index == 6);
     ///
     /// assert_eq!(2, vox.models[0].num_of_voxels());
     /// ```
@@ -390,7 +390,7 @@ impl Model {
     /// vox.models[0].add_voxel_at_pos(1,1,4,7).unwrap();
     ///
     /// //make all voxels have index 3 on the palette as their color
-    /// vox.models[0].change_voxels(|voxel| voxel.colorindex = 3);
+    /// vox.models[0].change_voxels(|voxel| voxel.color_index = 3);
     /// ```
     pub fn change_voxels<T>(&mut self, mut closure: T)
     where

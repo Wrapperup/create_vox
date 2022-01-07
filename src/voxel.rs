@@ -4,7 +4,7 @@ use std::ops::Add;
 #[derive(Clone)]
 pub struct Voxel {
     pub position: (u8, u8, u8),
-    pub colorindex: u8,
+    pub color_index: u8,
 }
 
 impl Voxel {
@@ -22,7 +22,7 @@ impl Voxel {
         }
         Voxel {
             position: (x, y, z),
-            colorindex: colorindex_value,
+            color_index: colorindex_value,
         }
     }
 
@@ -41,7 +41,7 @@ impl Voxel {
 
 impl PartialEq for Voxel {
     fn eq(&self, other: &Voxel) -> bool {
-        self.position == other.position && self.colorindex == other.colorindex
+        self.position == other.position && self.color_index == other.color_index
     }
 }
 
