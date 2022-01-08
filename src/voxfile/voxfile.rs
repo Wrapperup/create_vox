@@ -240,4 +240,14 @@ impl VoxFile {
 
         return id
     }
+
+    fn get_model_by_id(&self, id: i32) -> Option<&Model> {
+        for model in self.models.iter() {
+            if model.id == id {
+                return Some(model);
+            }
+        }
+
+        return None;
+    }
 }
