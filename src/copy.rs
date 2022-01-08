@@ -4,7 +4,7 @@ use crate::node::{Node, NodeAttributes, NodeType};
 pub struct ModelCopy {
     pub model_id: i32,
     pub position: Option<(i32, i32, i32)>,
-    pub(crate) rotation: Option<u8>,
+    pub rotation: Option<u8>,
     pub layer: Option<i32>,
     pub name: Option<String>,
 }

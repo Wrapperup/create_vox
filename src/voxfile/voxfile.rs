@@ -8,9 +8,9 @@ use crate::Color;
 pub struct VoxFile {
     pub models: Vec<Model>,
     pub palette: [Color; 256],
-    pub(crate)root_node: Node,
+    pub root_node: Node,
     pub(crate) layers: Vec<Layer>,
-    pub(crate) copies: Vec<ModelCopy>,
+    pub copies: Vec<ModelCopy>,
 }
 
 impl VoxFile {
